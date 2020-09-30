@@ -1,0 +1,48 @@
+{
+  "name": "@pdfmk/client",
+  "version": "0.1.0",
+  "description": "Simple tool library for the waiting using Promises.",
+  "main": "dist/main.js",
+  "typings": "dist/main.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "directions": {
+    "functions": "dist/functions"
+  },
+  "scripts": {
+    "start": "npm run build-watch",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "prettier": "prettier --config .prettierrc --write \"{src,test,.vscode}/**/*.{ts,json}\"",
+    "prettier-watch": "onchange \"{src,test,.vscode}/**/*.{ts,json}\" -- prettier --config .prettierrc --write {{changed}}",
+    "prettier-commit": "git diff --exit-code && npm run prettier && git add src && git commit --allow-empty -m \"Prettier\"",
+    "documentation": "typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Wait second\" ./src",
+    "documentation-commit": "git diff --exit-code && npm run documentation && git add docs && git commit --allow-empty -m \"Documentation\"",
+    "test": "jest --config jestconfig.json",
+    "test-watch": "jest --config jestconfig.json --watchAll",
+    "lint": "tslint -p tsconfig.json",
+    "preversion": "npm test && npm run lint && npm run build && npm run prettier-commit && npm run documentation-commit",
+    "postversion": "git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:hejny/waitasecond.git"
+  },
+  "author": "Pavol Hejný",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "codecov": "^3.5.0",
+    "jest": "^24.8.0",
+    "onchange": "^3.3.0",
+    "prettier": "github:prettier/prettier",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.1"
+  }
+}
