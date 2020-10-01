@@ -1,13 +1,13 @@
-# Wait a second library
+# PDF Maker client
 
 A very simple tool library for the waiting using Promises.
 
 # Install
 
-Install from [NPM](https://www.npmjs.com/package/configchecker)
+Install from [NPM](https://www.npmjs.com/package/pdfmk)
 
 ```bash
-npm i waitasecond
+npm i pdfmk
 ```
 
 # Usage

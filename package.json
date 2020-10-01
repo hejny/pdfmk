@@ -1,38 +1,38 @@
 {
-  "name": "@pdfmk/client",
+  "name": "pdfmk",
   "version": "0.1.0",
-  "description": "Simple tool library for the waiting using Promises.",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
-  "sideEffects": false,
   "files": [
     "dist/**"
   ],
-  "directions": {
-    "functions": "dist/functions"
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hejny/pdf-maker-client"
   },
+  "author": "Pavol Hejný <me@pavolhejny.com> (https://www.pavolhejny.com/)",
+  "license": "ISC",
   "scripts": {
     "start": "npm run build-watch",
     "build": "tsc",
     "build-watch": "tsc --watch",
-    "prettier": "prettier --config .prettierrc --write \"{src,test,.vscode}/**/*.{ts,json}\"",
-    "prettier-watch": "onchange \"{src,test,.vscode}/**/*.{ts,json}\" -- prettier --config .prettierrc --write {{changed}}",
-    "prettier-commit": "git diff --exit-code && npm run prettier && git add src && git commit --allow-empty -m \"Prettier\"",
+    "lint": "tslint -p tsconfig.json",
+    "prettier": "prettier --config .prettierrc --write \"./{src,test,.vscode}/**/*.{ts,json}\"",
+    "pretty-imports": "npx organize-imports-cli tsconfig.json",
+    "prettier-watch": "onchange \"./(src|test|.vscode)/**/*.(ts|json)\" -- prettier --config .prettierrc --write {{changed}}",
+    "prettier-commit": "git diff --exit-code && npm run pretty-imports && npm run prettier && git add src && git commit --allow-empty -m \"Prettier\"",
     "documentation": "typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Wait second\" ./src",
     "documentation-commit": "git diff --exit-code && npm run documentation && git add docs && git commit --allow-empty -m \"Documentation\"",
     "test": "jest --config jestconfig.json",
     "test-watch": "jest --config jestconfig.json --watchAll",
-    "lint": "tslint -p tsconfig.json",
-    "preversion": "npm test && npm run lint && npm run build && npm run prettier-commit && npm run documentation-commit",
+    "preversion": "npm test && npm run prettier-commit && npm run lint && npm run build && npm run documentation-commit",
     "postversion": "git push && git push --tags && npm publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:hejny/waitasecond.git"
+  "dependencies": {
+    "@types/puppeteer": "^3.0.2",
+    "cross-fetch": "^3.0.6"
   },
-  "author": "Pavol Hejný",
-  "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "codecov": "^3.5.0",
@@ -42,7 +42,7 @@
     "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.14.2",
+    "typedoc": "^0.19.2",
     "typescript": "^3.5.1"
   }
 }
