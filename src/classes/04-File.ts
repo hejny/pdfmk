@@ -27,10 +27,12 @@ export abstract class GeneratedFile<
         const options = this.optionsFlatDeep;
 
         // TODO: !!! Trim /
-        const url = new URL((options.url as string) + '/make');
+        const url = new URL((options.apiUrl as string) + '/make');
         for (const [key, value] of Object.entries(options)) {
             // console.log({ key, value });
-            url.searchParams.set(key, value as string);
+            if (key !== 'apiUrl') {
+                url.searchParams.set(key, value as string);
+            }
         }
 
         // TODO:
