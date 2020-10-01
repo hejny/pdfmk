@@ -1,13 +1,13 @@
-import { Node } from './00-Node';
-import { IPageOptions, Page } from './03-Page';
+import { IOptions, Node } from './00-Node';
+import { BlankPage, IBlankPageOptions } from './03-Page';
 
-export interface IMakerOptions {
+export interface IMakerOptions extends IOptions {
     url: string;
     token?: string;
 }
 
 export class Maker extends Node<IMakerOptions, null> {
-    public open(options: IPageOptions) {
-        return new Page(options, this);
+    public open(options: IBlankPageOptions) {
+        return new BlankPage(options, this);
     }
 }

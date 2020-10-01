@@ -1,11 +1,15 @@
+export interface IOptions {
+    [key: string]: string | number | boolean | undefined | object;
+}
+
 export abstract class Node<
-    TOptions extends Record<string, any>,
+    TOptions extends IOptions,
     TParent extends Node<any, any> | null
 > {
     constructor(private options: TOptions, private parent: TParent) {}
 
-    public get optionsFlat(): Record<string, string | number | boolean> {
-        const options: Record<string, string | number | boolean> = {};
+    protected get optionsFlat(): IOptions {
+        const options: IOptions = {};
 
         for (const [key, value] of Object.entries(this.options)) {
             // TODO: DRY
@@ -42,9 +46,14 @@ export abstract class Node<
         return options;
     }
 
-    public get optionsFlatDeep(): Record<string, string | number | boolean> {
+    protected get optionsComputed(): IOptions {
+        return {};
+    }
+
+    protected get optionsFlatDeep(): IOptions {
         return {
             ...(this.parent ? this.parent.optionsFlatDeep : {}),
+            ...this.optionsComputed,
             ...this.optionsFlat,
         };
     }

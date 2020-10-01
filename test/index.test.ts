@@ -16,12 +16,12 @@ test('PDFMK', () => {
             .open({
                 url: `https://www.pavolhejny.com/`,
             })
-            //.wait({})
+            .load({ waitUntil: 'domcontentloaded' })
             .toPdf({
                 scale: 1,
                 margin: {
-                    top: '1cm'
-                }
+                    top: '1cm',
+                },
             })
             .getUnsecurePublicUrlSync()
             .toString();

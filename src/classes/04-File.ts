@@ -1,19 +1,18 @@
 import fetch from 'cross-fetch';
 import { PDFOptions, ScreenshotOptions } from 'puppeteer';
-import { Node } from './00-Node';
+import { IOptions, Node } from './00-Node';
 import { Page } from './03-Page';
 
-export interface IFileOptions {}
+export interface IFileOptions extends IOptions {}
 
 /**
  * TODO: Some more elegant way how to not do a collision with object File
  */
 abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
     TFileOptions,
-    Page
+    Page<any, any>
 > {
     public getUnsecurePublicUrlSync(): URL {
-
         const options = this.optionsFlatDeep;
 
         const url = new URL(options.url as string);
@@ -45,27 +44,41 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
     }
 }
 
-export interface IPdfFileOptions extends Omit<PDFOptions, 'path'> {}
+export interface IPdfFileOptions extends IOptions, Omit<PDFOptions, 'path'> {
+    // type: 'pdf';
+}
 
-export class PdfFile extends GeneratedFile<IPdfFileOptions> {}
+export class PdfFile extends GeneratedFile<IPdfFileOptions> {
+    public get optionsComputed(): IOptions {
+        return { type: 'pdf' };
+    }
+}
 
-interface IImageFileOptions extends Omit<ScreenshotOptions, 'path'> {}
+interface IImageFileOptions extends IOptions, Omit<ScreenshotOptions, 'path'> {}
 
 abstract class ImageFile<
     TFileOptions extends IImageFileOptions
 > extends GeneratedFile<TFileOptions> {}
 
 export interface IPngFileOptions extends IImageFileOptions {
-    type: 'png';
+    // type: 'png';
 }
 
-export class PngFile extends ImageFile<IPngFileOptions> {}
+export class PngFile extends ImageFile<IPngFileOptions> {
+    public get optionsComputed(): IOptions {
+        return { type: 'png' };
+    }
+}
 
 export interface IJpegFileOptions extends IImageFileOptions {
-    type: 'jpeg';
+    // type: 'jpeg';
     quality: number;
 }
 
-export class JpegFile extends ImageFile<IJpegFileOptions> {}
+export class JpegFile extends ImageFile<IJpegFileOptions> {
+    public get optionsComputed(): IOptions {
+        return { type: 'jpeg' };
+    }
+}
 
 // new Maker({}).open().toPdf().getPublicUrlSync().toString();
