@@ -60,7 +60,7 @@ export class PdfFile extends GeneratedFile<IPdfFileOptions> {
     }
 }
 
-interface IImageFileOptions extends IOptions, Omit<ScreenshotOptions, 'path'> {}
+interface IImageFileOptions extends IOptions, Omit<ScreenshotOptions, 'path'|'encoding'> {}
 
 abstract class ImageFile<
     TFileOptions extends IImageFileOptions
