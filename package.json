@@ -24,8 +24,8 @@
     "prettier-commit": "git diff --exit-code && npm run pretty-imports && npm run prettier && git add src && git commit --allow-empty -m \"Prettier\"",
     "documentation": "typedoc --excludePrivate --hideGenerator --mode file --theme minimal --out docs --name \"Wait second\" ./src",
     "documentation-commit": "git diff --exit-code && npm run documentation && git add docs && git commit --allow-empty -m \"Documentation\"",
-    "test": "jest --config jestconfig.json",
-    "test-watch": "jest --config jestconfig.json --watchAll",
+    "TODO: test": "jest --config jestconfig.json",
+    "TODO: test-watch": "jest --config jestconfig.json --watchAll",
     "sample": "ts-node ./samples/sample1.ts",
     "preversion": "npm test && npm run prettier-commit && npm run lint && npm run build && npm run documentation-commit",
     "postversion": "git push && git push --tags && npm publish"
