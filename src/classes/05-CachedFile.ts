@@ -32,8 +32,10 @@ export class CachedFile<TFileOptions extends ICachedFileOptions> extends Node<
 
             // const fileStat = await stat(fileName);
         } catch (error) {
-            const content = await this.parent.getContent();
-            await writeFile(fileName, content);
+            await writeFile(
+                fileName,
+                Buffer.from(await (await this.parent.getBlob()).arrayBuffer()),
+            );
         }
 
         return fileName;
