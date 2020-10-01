@@ -28,7 +28,7 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
 
         const url = new URL(options.url as string);
         for (const [key, value] of Object.entries(options)) {
-            console.log({ key, value });
+            // console.log({ key, value });
             url.searchParams.set(key, value as string);
         }
 
