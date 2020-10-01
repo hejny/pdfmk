@@ -32,7 +32,9 @@
   },
   "dependencies": {
     "@types/puppeteer": "^3.0.2",
-    "cross-fetch": "^3.0.6"
+    "@types/sjcl": "^1.0.29",
+    "cross-fetch": "^3.0.6",
+    "sjcl": "^1.0.8"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",

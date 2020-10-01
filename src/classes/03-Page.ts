@@ -33,6 +33,7 @@ export abstract class Page<
 
 export interface IBlankPageOptions extends IOptions {
     url: string;
+    // TODO: Page size
 }
 
 export class BlankPage extends Page<IBlankPageOptions, Maker> {}

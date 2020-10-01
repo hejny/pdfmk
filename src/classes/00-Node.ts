@@ -6,7 +6,7 @@ export abstract class Node<
     TOptions extends IOptions,
     TParent extends Node<any, any> | null
 > {
-    constructor(private options: TOptions, private parent: TParent) {}
+    constructor(protected options: TOptions, protected parent: TParent) {}
 
     protected get optionsFlat(): IOptions {
         const options: IOptions = {};

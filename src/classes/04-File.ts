@@ -2,18 +2,18 @@ import fetch from 'cross-fetch';
 import { PDFOptions, ScreenshotOptions } from 'puppeteer';
 import { IOptions, Node } from './00-Node';
 import { Page } from './03-Page';
+import { CachedFile, ICachedFileOptions } from './05-CachedFile';
 
 export interface IFileOptions extends IOptions {}
 
 /**
  * TODO: Some more elegant way how to not do a collision with object File
  */
-abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
-    TFileOptions,
-    Page<any, any>
-> {
+export abstract class GeneratedFile<
+    TFileOptions extends IFileOptions
+> extends Node<TFileOptions, Page<any, any>> {
     public getUrl(security?: 'masked'): Promise<URL>;
-    public getUrl(security?: null | 'signed' | 'encrypted'): URL;
+    public getUrl(security?: null | undefined | 'signed' | 'encrypted'): URL;
     public getUrl(
         security?: null | 'signed' | 'encrypted' | 'masked',
     ): URL | Promise<URL> {
@@ -26,7 +26,8 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
 
         const options = this.optionsFlatDeep;
 
-        const url = new URL(options.url as string);
+        // TODO: !!! Trim /
+        const url = new URL((options.url as string) + '/make');
         for (const [key, value] of Object.entries(options)) {
             // console.log({ key, value });
             url.searchParams.set(key, value as string);
@@ -37,16 +38,26 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
 
         return url;
     }
-    public async getContent(): Promise<Blob> {
-        throw new Error(`Not implemented yet.`);
-
-        fetch(``);
+    public async getResponse(): Promise<Response> {
+        return await fetch(this.getUrl().toString());
+    }
+    public async getContent(): Promise<string> {
+        return (await this.getResponse()).text();
+    }
+    public async getBlob(): Promise<Blob> {
+        return (await this.getResponse()).blob();
     }
     public async getFile(): Promise<File> {
         throw new Error(`Not implemented yet.`);
     }
     public async getTitle(): Promise<string> {
         throw new Error(`Not implemented yet.`);
+    }
+
+    public cacheLocal(
+        options: ICachedFileOptions,
+    ): CachedFile<ICachedFileOptions> {
+        return new CachedFile(options, this);
     }
 }
 
@@ -60,7 +71,12 @@ export class PdfFile extends GeneratedFile<IPdfFileOptions> {
     }
 }
 
-interface IImageFileOptions extends IOptions, Omit<ScreenshotOptions, 'path'|'encoding'> {}
+interface IImageFileOptions
+    extends IOptions,
+        Omit<ScreenshotOptions, 'path' | 'encoding'> {
+    width?: number;
+    height?: number;
+}
 
 abstract class ImageFile<
     TFileOptions extends IImageFileOptions
@@ -68,6 +84,7 @@ abstract class ImageFile<
 
 export interface IPngFileOptions extends IImageFileOptions {
     // type: 'png';
+    quality: undefined;
 }
 
 export class PngFile extends ImageFile<IPngFileOptions> {

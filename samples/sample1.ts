@@ -15,11 +15,16 @@ const url = maker({
         },
     })*/
     .toJpeg({
+        width: 1920,
+        height: 1200,
         quality: 70,
         fullPage: true
     })
-    .getUrl()
-    .toString();
+    .cacheLocal({
+        cacheDir: '../cache'
+        // ttl: 86400 
+    })
+    .getFile()
 
     
 console.log(url);
