@@ -25,13 +25,13 @@ export class CachedFile<TFileOptions extends ICachedFileOptions> extends Node<
         try {
             await access(fileName);
 
-            //const fileStat = await stat(fileName);
+            // const fileStat = await stat(fileName);
         } catch (error) {
             const content = await this.parent.getContent();
             await writeFile(fileName, content);
-        } finally {
-            return fileName;
         }
+
+        return fileName;
     }
 
     public async getBlob(): Promise<Blob> {
