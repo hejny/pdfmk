@@ -1,6 +1,6 @@
 {
   "name": "pdfmk",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
   "files": [
