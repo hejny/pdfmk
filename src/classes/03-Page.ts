@@ -1,8 +1,14 @@
 import { LoadEvent } from 'puppeteer';
-
 import { IOptions, Node } from './00-Node';
 import { Maker } from './01-Maker';
-import { IJpegFileOptions, IPdfFileOptions, IPngFileOptions, JpegFile, PdfFile, PngFile } from './04-File';
+import {
+    IJpegFileOptions,
+    IPdfFileOptions,
+    IPngFileOptions,
+    JpegFile,
+    PdfFile,
+    PngFile,
+} from './04-File';
 
 export abstract class Page<
     TPageOptions extends IOptions,
@@ -32,9 +38,8 @@ export interface IBlankPageOptions extends IOptions {
 export class BlankPage extends Page<IBlankPageOptions, Maker> {}
 // TODO: export class PdfPage extends Page<IPageOptions, Maker> {}
 
-
 interface ILoadOptions extends IOptions {
-    renderOnCallback?:string;
+    renderOnCallback?: string;
     waitUntil?: LoadEvent;
     // TODO: More
 }

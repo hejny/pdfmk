@@ -13,13 +13,14 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
     Page<any, any>
 > {
     public getUrl(security?: 'masked'): Promise<URL>;
-    public getUrl(security?: null|'signed'|'encrypted'): URL;
-    public getUrl(security?: null|'signed'|'encrypted'|'masked'): URL|Promise<URL> {
-
+    public getUrl(security?: null | 'signed' | 'encrypted'): URL;
+    public getUrl(
+        security?: null | 'signed' | 'encrypted' | 'masked',
+    ): URL | Promise<URL> {
         // TODO: Custom message and debugging + download
         // TODO: Warn when unsecure
 
-        if(security){
+        if (security) {
             throw new Error(`Not implemented yet.`);
         }
 
@@ -32,7 +33,7 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
         }
 
         // TODO:
-        url.searchParams.set(`errorMessage`,'DEBUG');
+        url.searchParams.set(`errorMessage`, 'DEBUG');
 
         return url;
     }
