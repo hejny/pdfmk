@@ -1,7 +1,6 @@
 import { access, writeFile } from 'fs/promises';
 import { join } from 'path';
 import sjcl from 'sjcl';
-
 import { IOptions, Node } from './00-Node';
 import { GeneratedFile } from './04-File';
 
