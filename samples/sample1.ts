@@ -8,14 +8,17 @@ const url = maker({
         url: `https://www.pavolhejny.com/`,
     })
     .load({ waitUntil: 'domcontentloaded', renderOnCallback:'renderMe' })
-    .load({ waitUntil: 'domcontentloaded', renderOnCallback:'renderMe' })
-    .toPdf({
+    /*.toPdf({
         scale: 1,
         margin: {
             top: '1cm',
         },
+    })*/
+    .toJpeg({
+        quality: 70,
+        fullPage: true
     })
-    .getUnsecurePublicUrlSync()
+    .getUrl()
     .toString();
 
     

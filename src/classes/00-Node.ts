@@ -51,6 +51,7 @@ export abstract class Node<
     }
 
     protected get optionsFlatDeep(): IOptions {
+        // TODO: Warn when overlapping
         return {
             ...(this.parent ? this.parent.optionsFlatDeep : {}),
             ...this.optionsComputed,

@@ -12,7 +12,17 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
     TFileOptions,
     Page<any, any>
 > {
-    public getUnsecurePublicUrlSync(): URL {
+    public getUrl(security?: 'masked'): Promise<URL>;
+    public getUrl(security?: null|'signed'|'encrypted'): URL;
+    public getUrl(security?: null|'signed'|'encrypted'|'masked'): URL|Promise<URL> {
+
+        // TODO: Custom message and debugging + download
+        // TODO: Warn when unsecure
+
+        if(security){
+            throw new Error(`Not implemented yet.`);
+        }
+
         const options = this.optionsFlatDeep;
 
         const url = new URL(options.url as string);
@@ -21,20 +31,15 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
             url.searchParams.set(key, value as string);
         }
 
+        // TODO:
+        url.searchParams.set(`errorMessage`,'DEBUG');
+
         return url;
-    }
-    public getSignedPublicUrlSync(): URL {
-        throw new Error(`Not implemented yet.`);
-    }
-    public getEncryptedPublicUrlSync(): URL {
-        throw new Error(`Not implemented yet.`);
-    }
-    public async getPublicUrl(): Promise<URL> {
-        throw new Error(`Not implemented yet.`);
-        fetch(``);
     }
     public async getContent(): Promise<Blob> {
         throw new Error(`Not implemented yet.`);
+
+        fetch(``);
     }
     public async getFile(): Promise<File> {
         throw new Error(`Not implemented yet.`);
