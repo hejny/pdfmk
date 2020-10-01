@@ -2,7 +2,7 @@ import { IOptions, Node } from './00-Node';
 import { BlankPage, IBlankPageOptions } from './03-Page';
 
 export interface IMakerOptions extends IOptions {
-    url: string;
+    apiUrl: string;
     token?: string;
 }
 

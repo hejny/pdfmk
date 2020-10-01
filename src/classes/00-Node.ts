@@ -11,6 +11,22 @@ export abstract class Node<
     protected get optionsFlat(): IOptions {
         const options: IOptions = {};
 
+        const assign = (
+            key: string,
+            value:
+                | string
+                | number
+                | boolean /* TODO: Here could be object for the deep recursion */,
+        ) => {
+            if (typeof options[key] !== 'undefined') {
+                /* tslint:disable:no-console */
+                console.warn(
+                    `Collision in property "${key}", value "${options[key]}" is rewritten by "${value}".`,
+                );
+            }
+            options[key] = value;
+        };
+
         for (const [key, value] of Object.entries(this.options)) {
             // TODO: DRY
             if (
@@ -18,7 +34,7 @@ export abstract class Node<
                 typeof value === 'number' ||
                 typeof value === 'boolean'
             ) {
-                options[key] = value;
+                assign(key, value);
             } else if (typeof value === 'object') {
                 for (const [subkey, subvalue] of Object.entries(value)) {
                     if (
@@ -26,11 +42,12 @@ export abstract class Node<
                         typeof subvalue === 'number' ||
                         typeof subvalue === 'boolean'
                     ) {
-                        options[
+                        assign(
                             key +
                                 subkey.substr(0, 1).toUpperCase() +
-                                subkey.substr(1)
-                        ] = subvalue;
+                                subkey.substr(1),
+                            subvalue,
+                        );
                     } else {
                         // TODO: Support multiple layers
                         throw new Error(`Not supported layers of options.`);
