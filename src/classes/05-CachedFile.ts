@@ -1,8 +1,14 @@
-import { access, writeFile } from 'fs/promises';
+import { access as accessOld, writeFile as writeFileOld } from 'fs';
 import { join } from 'path';
 import sjcl from 'sjcl';
+import { promisify } from 'util';
+
 import { IOptions, Node } from './00-Node';
 import { GeneratedFile } from './04-File';
+
+// TODO: In future use import { access, writeFile } from 'fs/promises';
+const access = promisify(accessOld);
+const writeFile = promisify(writeFileOld);
 
 /**
  * ttl - TODO: seconds or miliseconds
