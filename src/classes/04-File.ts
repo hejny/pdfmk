@@ -13,13 +13,10 @@ abstract class GeneratedFile<TFileOptions extends IFileOptions> extends Node<
     Page
 > {
     public getUnsecurePublicUrlSync(): URL {
-        const options = {
-            ...this.parent.parent.options,
-            ...this.parent.options,
-            ...this.options,
-        };
 
-        const url = new URL(this.parent.parent.options.url);
+        const options = this.optionsFlatDeep;
+
+        const url = new URL(options.url as string);
         for (const [key, value] of Object.entries(options)) {
             console.log({ key, value });
             url.searchParams.set(key, value as string);
