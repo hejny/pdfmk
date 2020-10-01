@@ -49,6 +49,9 @@
 			<a href="blankpage.html" class="tsd-kind-icon">Blank<wbr>Page</a>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="cachedfile.html" class="tsd-kind-icon">Cached<wbr>File</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
 			<a href="generatedfile.html" class="tsd-kind-icon">Generated<wbr>File</a>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
@@ -60,6 +63,12 @@
 				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 					<a href="jpegfile.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a href="jpegfile.html#options" class="tsd-kind-icon">options</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a href="jpegfile.html#parent" class="tsd-kind-icon">parent</a>
+				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
 					<a href="jpegfile.html#optionscomputed" class="tsd-kind-icon">options<wbr>Computed</a>
 				</li>
@@ -70,10 +79,19 @@
 					<a href="jpegfile.html#optionsflatdeep" class="tsd-kind-icon">options<wbr>Flat<wbr>Deep</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="jpegfile.html#cachelocal" class="tsd-kind-icon">cache<wbr>Local</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="jpegfile.html#getblob" class="tsd-kind-icon">get<wbr>Blob</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="jpegfile.html#getcontent" class="tsd-kind-icon">get<wbr>Content</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="jpegfile.html#getfile" class="tsd-kind-icon">get<wbr>File</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="jpegfile.html#getresponse" class="tsd-kind-icon">get<wbr>Response</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="jpegfile.html#gettitle" class="tsd-kind-icon">get<wbr>Title</a>
@@ -103,6 +121,9 @@
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/iblankpageoptions.html" class="tsd-kind-icon">IBlank<wbr>Page<wbr>Options</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/icachedfileoptions.html" class="tsd-kind-icon">ICached<wbr>File<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/ifileoptions.html" class="tsd-kind-icon">IFile<wbr>Options</a>
@@ -158,6 +179,13 @@
 							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#constructor" class="tsd-kind-icon">constructor</a></li>
 						</ul>
 					</section>
+					<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
+						<h3>Properties</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="jpegfile.html#options" class="tsd-kind-icon">options</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="jpegfile.html#parent" class="tsd-kind-icon">parent</a></li>
+						</ul>
+					</section>
 					<section class="tsd-index-section ">
 						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
@@ -169,8 +197,11 @@
 					<section class="tsd-index-section tsd-is-inherited">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#cachelocal" class="tsd-kind-icon">cache<wbr>Local</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#getblob" class="tsd-kind-icon">get<wbr>Blob</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#getcontent" class="tsd-kind-icon">get<wbr>Content</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#getfile" class="tsd-kind-icon">get<wbr>File</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#getresponse" class="tsd-kind-icon">get<wbr>Response</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#gettitle" class="tsd-kind-icon">get<wbr>Title</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="jpegfile.html#geturl" class="tsd-kind-icon">get<wbr>Url</a></li>
 						</ul>
@@ -191,7 +222,7 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="node.html">Node</a>.<a href="node.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/00-Node.ts#L8">classes/00-Node.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/00-Node.ts#L8">classes/00-Node.ts:8</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -208,6 +239,31 @@
 				</ul>
 			</section>
 		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<a name="options" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagProtected">Protected</span> options</h3>
+				<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ijpegfileoptions.html" class="tsd-signature-type">IJpegFileOptions</a></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="node.html">Node</a>.<a href="node.html#options">options</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/00-Node.ts#L9">classes/00-Node.ts:9</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<a name="parent" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagProtected">Protected</span> parent</h3>
+				<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <a href="page.html" class="tsd-signature-type">Page</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="node.html">Node</a>.<a href="node.html#parent">parent</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/00-Node.ts#L9">classes/00-Node.ts:9</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Accessors</h2>
 			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
@@ -221,7 +277,7 @@
 						<aside class="tsd-sources">
 							<p>Overrides <a href="node.html">Node</a>.<a href="node.html#optionscomputed">optionsComputed</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L85">classes/04-File.ts:85</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L102">classes/04-File.ts:102</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ioptions.html" class="tsd-signature-type">IOptions</a></h4>
@@ -239,7 +295,7 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="node.html">Node</a>.<a href="node.html#optionsflat">optionsFlat</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/00-Node.ts#L11">classes/00-Node.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/00-Node.ts#L11">classes/00-Node.ts:11</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ioptions.html" class="tsd-signature-type">IOptions</a></h4>
@@ -257,7 +313,7 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="node.html">Node</a>.<a href="node.html#optionsflatdeep">optionsFlatDeep</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/00-Node.ts#L53">classes/00-Node.ts:53</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/00-Node.ts#L53">classes/00-Node.ts:53</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/ioptions.html" class="tsd-signature-type">IOptions</a></h4>
@@ -268,20 +324,62 @@
 		<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="cachelocal" class="tsd-anchor"></a>
+				<h3>cache<wbr>Local</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">cache<wbr>Local<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/icachedfileoptions.html" class="tsd-signature-type">ICachedFileOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cachedfile.html" class="tsd-signature-type">CachedFile</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icachedfileoptions.html" class="tsd-signature-type">ICachedFileOptions</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#cachelocal">cacheLocal</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L57">classes/04-File.ts:57</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>options: <a href="../interfaces/icachedfileoptions.html" class="tsd-signature-type">ICachedFileOptions</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="cachedfile.html" class="tsd-signature-type">CachedFile</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icachedfileoptions.html" class="tsd-signature-type">ICachedFileOptions</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="getblob" class="tsd-anchor"></a>
+				<h3>get<wbr>Blob</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Blob<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#getblob">getBlob</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L47">classes/04-File.ts:47</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="getcontent" class="tsd-anchor"></a>
 				<h3>get<wbr>Content</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Content<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Content<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#getcontent">getContent</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L40">classes/04-File.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L44">classes/04-File.ts:44</a></li>
 							</ul>
 						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -296,10 +394,28 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#getfile">getFile</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L45">classes/04-File.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L50">classes/04-File.ts:50</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">File</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="getresponse" class="tsd-anchor"></a>
+				<h3>get<wbr>Response</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Response<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#getresponse">getResponse</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L41">classes/04-File.ts:41</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -314,7 +430,7 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#gettitle">getTitle</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L48">classes/04-File.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L53">classes/04-File.ts:53</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -326,14 +442,14 @@
 				<h3>get<wbr>Url</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<li class="tsd-signature tsd-kind-icon">get<wbr>Url<span class="tsd-signature-symbol">(</span>security<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"masked"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Url<span class="tsd-signature-symbol">(</span>security<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"signed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"encrypted"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span></li>
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Url<span class="tsd-signature-symbol">(</span>security<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"signed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"encrypted"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#geturl">getUrl</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L15">classes/04-File.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L15">classes/04-File.ts:15</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -348,13 +464,13 @@
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="generatedfile.html">GeneratedFile</a>.<a href="generatedfile.html#geturl">getUrl</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/e6e33e2/src/classes/04-File.ts#L16">classes/04-File.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/bcc2d80/src/classes/04-File.ts#L16">classes/04-File.ts:16</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> security: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"signed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"encrypted"</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> security: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"signed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"encrypted"</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">URL</span></h4>
@@ -376,6 +492,9 @@
 					</ul>
 					<ul class="tsd-legend">
 						<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
 					</ul>
 				</div>
 			</div>
