@@ -23,6 +23,25 @@ export abstract class Page<
     public toPdf(options: IPdfFileOptions): PdfFile {
         return new PdfFile(options, this);
     }
+    public toImage(options: IPngFileOptions & { type: 'png' }): PngFile;
+    public toImage(
+        options: IJpegFileOptions & { type: 'jpeg' | 'jpg' },
+    ): JpegFile;
+    public toImage(
+        options:
+            | (IPngFileOptions & { type: 'png' })
+            | (IJpegFileOptions & { type: 'jpeg' | 'jpg' }),
+    ): PngFile | JpegFile {
+        if (options.type === 'png') {
+            return this.toPng(options);
+        } else if (options.type === 'jpeg' || (options as any).type === 'jpg') {
+            (options as any).type =
+                'jpeg' /* TODO: Create new object, do not mutate */;
+            return this.toJpeg(options);
+        } else {
+            throw new Error(`Unknown image format`);
+        }
+    }
     public toPng(options: IPngFileOptions): PngFile {
         return new PngFile(options, this);
     }

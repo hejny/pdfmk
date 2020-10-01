@@ -84,7 +84,7 @@ abstract class ImageFile<
 
 export interface IPngFileOptions extends IImageFileOptions {
     // type: 'png';
-    quality: undefined;
+    // quality: undefined;
 }
 
 export class PngFile extends ImageFile<IPngFileOptions> {
