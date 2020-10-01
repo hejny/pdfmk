@@ -1,4 +1,8 @@
-import { access as accessOld, writeFile as writeFileOld } from 'fs';
+import {
+    access as accessOld,
+    writeFile as writeFileOld,
+    readFile as readFileOld,
+} from 'fs';
 import { join } from 'path';
 import sjcl from 'sjcl';
 import { promisify } from 'util';
@@ -8,6 +12,7 @@ import { GeneratedFile } from './04-File';
 // TODO: In future use import { access, writeFile } from 'fs/promises';
 const access = promisify(accessOld);
 const writeFile = promisify(writeFileOld);
+const readFile = promisify(readFileOld);
 
 /**
  * ttl - TODO: seconds or miliseconds
@@ -41,6 +46,9 @@ export class CachedFile<TFileOptions extends ICachedFileOptions> extends Node<
         return fileName;
     }
 
+    public async getBuffer(): Promise<Buffer> {
+        return await readFile(await this.getLocalPath());
+    }
     public async getBlob(): Promise<Blob> {
         throw new Error(`Not implemented yet.`);
     }
