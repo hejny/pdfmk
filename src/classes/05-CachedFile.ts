@@ -20,13 +20,13 @@ function fs() {
     }
 
     const access = promisify(accessOld);
-    const writeFile = promisify(writeFileOld);
     const readFile = promisify(readFileOld);
+    const writeFile = promisify(writeFileOld);
 
     return {
         access,
-        writeFile,
         readFile,
+        writeFile,
     };
 }
 
