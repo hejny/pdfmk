@@ -109,16 +109,16 @@
 			<a href="interfaces/ipngfileoptions.html" class="tsd-kind-icon">IPng<wbr>File<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="globals.html#access" class="tsd-kind-icon">access</a>
+			<a href="globals.html#isbrowser" class="tsd-kind-icon">is<wbr>Browser</a>
 		</li>
 		<li class=" tsd-kind-variable">
-			<a href="globals.html#readfile" class="tsd-kind-icon">read<wbr>File</a>
-		</li>
-		<li class=" tsd-kind-variable">
-			<a href="globals.html#writefile" class="tsd-kind-icon">write<wbr>File</a>
+			<a href="globals.html#isnode" class="tsd-kind-icon">is<wbr>Node</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="globals.html#default" class="tsd-kind-icon">default</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="globals.html#fs" class="tsd-kind-icon">fs</a>
 		</li>
 	</ul>
 </nav>
@@ -189,15 +189,15 @@
 					<section class="tsd-index-section ">
 						<h3>Variables</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-variable"><a href="globals.html#access" class="tsd-kind-icon">access</a></li>
-							<li class="tsd-kind-variable"><a href="globals.html#readfile" class="tsd-kind-icon">read<wbr>File</a></li>
-							<li class="tsd-kind-variable"><a href="globals.html#writefile" class="tsd-kind-icon">write<wbr>File</a></li>
+							<li class="tsd-kind-variable"><a href="globals.html#isbrowser" class="tsd-kind-icon">is<wbr>Browser</a></li>
+							<li class="tsd-kind-variable"><a href="globals.html#isnode" class="tsd-kind-icon">is<wbr>Node</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function"><a href="globals.html#default" class="tsd-kind-icon">default</a></li>
+							<li class="tsd-kind-function"><a href="globals.html#fs" class="tsd-kind-icon">fs</a></li>
 						</ul>
 					</section>
 				</div>
@@ -206,32 +206,22 @@
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Variables</h2>
 			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="access" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> access</h3>
-				<div class="tsd-signature tsd-kind-icon">access<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> = promisify(accessOld)</span></div>
+				<a name="isbrowser" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Browser</h3>
+				<div class="tsd-signature tsd-kind-icon">is<wbr>Browser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> = new Function(&#x27;try {return this&#x3D;&#x3D;&#x3D;window;}catch(e){ return false;}&#x27;,)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/7d876b4/src/classes/05-CachedFile.ts#L13">classes/05-CachedFile.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/a8d7cb0/src/utils/isBrowser.ts#L1">utils/isBrowser.ts:1</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="readfile" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> read<wbr>File</h3>
-				<div class="tsd-signature tsd-kind-icon">read<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> = promisify(readFileOld)</span></div>
+				<a name="isnode" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Node</h3>
+				<div class="tsd-signature tsd-kind-icon">is<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> = new Function(&#x27;try {return this&#x3D;&#x3D;&#x3D;global;}catch(e){return false;}&#x27;,)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/7d876b4/src/classes/05-CachedFile.ts#L15">classes/05-CachedFile.ts:15</a></li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable">
-				<a name="writefile" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagConst">Const</span> write<wbr>File</h3>
-				<div class="tsd-signature tsd-kind-icon">write<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> = promisify(writeFileOld)</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/7d876b4/src/classes/05-CachedFile.ts#L14">classes/05-CachedFile.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/a8d7cb0/src/utils/isNode.ts#L1">utils/isNode.ts:1</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -248,7 +238,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/7d876b4/src/main.ts#L1">main.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/a8d7cb0/src/main.ts#L1">main.ts:1</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -258,6 +248,34 @@
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="classes/maker.html" class="tsd-signature-type">Maker</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="fs" class="tsd-anchor"></a>
+				<h3>fs</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">fs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>access<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol">; </span>readFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol">; </span>writeFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> }</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/hejny/pdf-maker-client/blob/a8d7cb0/src/classes/05-CachedFile.ts#L13">classes/05-CachedFile.ts:13</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>access<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol">; </span>readFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol">; </span>writeFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span><span class="tsd-signature-symbol"> }</span></h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>access<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>read<wbr>File<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>write<wbr>File<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__promisify__</span></h5>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
