@@ -1,3 +1,3 @@
-export const isNode = new Function(
-    'try {return this===global;}catch(e){return false;}',
-);
+export function isNode(){
+    return typeof process !== 'undefined';
+}
