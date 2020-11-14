@@ -1,3 +1,3 @@
-export function isNode(){
+export function isNode() {
     return typeof process !== 'undefined';
 }
