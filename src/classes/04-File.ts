@@ -49,6 +49,9 @@ export abstract class GeneratedFile<
     public async getBlob(): Promise<Blob> {
         return (await this.getResponse()).blob();
     }
+    public async getArrayBuffer(): Promise<ArrayBuffer> {
+        return (await this.getBlob()).arrayBuffer();
+    }
     public async getFile(): Promise<File> {
         throw new Error(`Not implemented yet.`);
     }
