@@ -1,7 +1,7 @@
 import {
     access as accessOld,
     readFile as readFileOld,
-    writeFile as writeFileOld,
+    writeFile as writeFileOld
 } from 'fs';
 import { join } from 'path';
 import sjcl from 'sjcl';

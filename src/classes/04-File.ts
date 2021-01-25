@@ -1,9 +1,9 @@
 import fetch from 'cross-fetch';
 import { PDFOptions, ScreenshotOptions } from 'puppeteer';
+import { URL } from 'react-native-url-polyfill';
 import { IOptions, Node } from './00-Node';
 import { Page } from './03-Page';
 import { CachedFile, ICachedFileOptions } from './05-CachedFile';
-import { URL } from 'react-native-url-polyfill';
 
 export interface IFileOptions extends IOptions {}
 

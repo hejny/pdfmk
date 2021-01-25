@@ -7,7 +7,7 @@ import {
     IPngFileOptions,
     JpegFile,
     PdfFile,
-    PngFile,
+    PngFile
 } from './04-File';
 
 export abstract class Page<
