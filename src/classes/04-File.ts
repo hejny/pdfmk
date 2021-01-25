@@ -13,8 +13,14 @@ export interface IFileOptions extends IOptions {}
 export abstract class GeneratedFile<
     TFileOptions extends IFileOptions
 > extends Node<TFileOptions, Page<any, any>> {
-    public getUrl(security?: 'masked'): Promise<URL/* Note: Not using native URL because of old node versions */>;
-    public getUrl(security?: null | undefined | 'signed' | 'encrypted'): Promise<URL>;
+    public getUrl(
+        security?: 'masked',
+    ): Promise<
+        URL /* Note: Not using native URL because of old node versions */
+    >;
+    public getUrl(
+        security?: null | undefined | 'signed' | 'encrypted',
+    ): Promise<URL>;
     public getUrl(
         security?: null | 'signed' | 'encrypted' | 'masked',
     ): URL | Promise<URL> {
