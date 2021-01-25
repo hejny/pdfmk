@@ -3,14 +3,14 @@ import maker from '../src/main';
 test('PDFMK', () => {
     expect(async () => {
         maker({
-            url: `https://pdfmk.com/api`,
+            apiUrl: `https://pdfmk.com/api`,
             token: `test-test-test-test`,
         });
     }).not.toThrowError();
 
     expect(async () => {
         const url = maker({
-            token: `test-test-test-test`,
+            apiUrl: `test-test-test-test`,
             url: `https://pdfmk.com/api`,
         })
             .open({

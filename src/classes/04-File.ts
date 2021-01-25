@@ -1,6 +1,5 @@
 import fetch from 'cross-fetch';
 import { PDFOptions, ScreenshotOptions } from 'puppeteer';
-import { URL } from 'react-native-url-polyfill';
 import { IOptions, Node } from './00-Node';
 import { Page } from './03-Page';
 import { CachedFile, ICachedFileOptions } from './05-CachedFile';
@@ -13,17 +12,9 @@ export interface IFileOptions extends IOptions {}
 export abstract class GeneratedFile<
     TFileOptions extends IFileOptions
 > extends Node<TFileOptions, Page<any, any>> {
-    public getUrl(
-        security?: 'masked',
-    ): Promise<
-        URL /* Note: Not using native URL because of old node versions */
-    >;
-    public getUrl(
-        security?: null | undefined | 'signed' | 'encrypted',
-    ): Promise<URL>;
-    public getUrl(
+    public async getUrl(
         security?: null | 'signed' | 'encrypted' | 'masked',
-    ): URL | Promise<URL> {
+    ): Promise<string> {
         // TODO: Custom message and debugging + download
         // TODO: Warn when unsecure
 
@@ -34,16 +25,18 @@ export abstract class GeneratedFile<
         const options = this.optionsFlatDeep;
 
         // TODO: !!! Trim /
-        const url = new URL((options.apiUrl as string) + '/make');
+        let url = (options.apiUrl as string) + '/make?_';
+        // TODO: Better construction of URL (see git history)
+
         for (const [key, value] of Object.entries(options)) {
             // console.log({ key, value });
             if (key !== 'apiUrl') {
-                url.searchParams.set(key, value as string);
+                url += `&${key}=${encodeURIComponent(value as string)}`;
             }
         }
 
         // TODO:
-        url.searchParams.set(`errorMessage`, 'DEBUG');
+        url += `&errorMessage=DEBUG`;
 
         return url;
     }
