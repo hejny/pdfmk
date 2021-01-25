@@ -3,6 +3,7 @@ import { PDFOptions, ScreenshotOptions } from 'puppeteer';
 import { IOptions, Node } from './00-Node';
 import { Page } from './03-Page';
 import { CachedFile, ICachedFileOptions } from './05-CachedFile';
+import { URL } from 'react-native-url-polyfill';
 
 export interface IFileOptions extends IOptions {}
 
@@ -12,8 +13,8 @@ export interface IFileOptions extends IOptions {}
 export abstract class GeneratedFile<
     TFileOptions extends IFileOptions
 > extends Node<TFileOptions, Page<any, any>> {
-    public getUrl(security?: 'masked'): Promise<URL>;
-    public getUrl(security?: null | undefined | 'signed' | 'encrypted'): URL;
+    public getUrl(security?: 'masked'): Promise<URL/* Note: Not using native URL because of old node versions */>;
+    public getUrl(security?: null | undefined | 'signed' | 'encrypted'): Promise<URL>;
     public getUrl(
         security?: null | 'signed' | 'encrypted' | 'masked',
     ): URL | Promise<URL> {

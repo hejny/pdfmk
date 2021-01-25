@@ -34,6 +34,7 @@
     "@types/puppeteer": "^3.0.2",
     "@types/sjcl": "^1.0.29",
     "cross-fetch": "^3.0.6",
+    "react-native-url-polyfill": "^1.2.0",
     "sjcl": "^1.0.8"
   },
   "devDependencies": {
