@@ -12,9 +12,8 @@ export interface IFileOptions extends IOptions {}
 export abstract class GeneratedFile<
     TFileOptions extends IFileOptions
 > extends Node<TFileOptions, Page<any, any>> {
-    public async getUrl(
-        security?: null | 'signed' | 'encrypted' | 'masked',
-    ): Promise<string> {
+    public getUrl(security?: null | 'signed' | 'encrypted' | 'masked'): string {
+        // TODO: as a promise
         // TODO: Custom message and debugging + download
         // TODO: Warn when unsecure
 
@@ -41,7 +40,7 @@ export abstract class GeneratedFile<
         return url;
     }
     public async getResponse(): Promise<Response> {
-        return await fetch(this.getUrl().toString());
+        return await fetch(this.getUrl());
     }
     public async getContent(): Promise<string> {
         return (await this.getResponse()).text();
