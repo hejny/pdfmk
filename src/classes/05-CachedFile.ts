@@ -51,7 +51,11 @@ export class CachedFile<TFileOptions extends ICachedFileOptions> extends Node<
         try {
             await fs().access(fileName);
 
-            // const fileStat = await stat(fileName);
+            if (this.options.ttl === 0) {
+                // TODO: ttl real check time
+                // const fileStat = await stat(fileName);
+                throw Error(`Expired`);
+            }
         } catch (error) {
             await fs().writeFile(
                 fileName,
