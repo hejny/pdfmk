@@ -4,7 +4,6 @@
 
  [![Package Quality](https://packagequality.com/shield/pdfmk.svg)](https://packagequality.com/#?package=pdfmk)
  [![License](https://img.shields.io/github/license/hejny/pdfmk.svg?style=flat)](https://raw.githubusercontent.com/hejny/pdfmk/master/LICENSE)
- [![NPM Version](https://badge.fury.io/js/@hejny%2Fpdfmk.svg)](https://www.npmjs.com/package/@hejny/pdfmk)
  [![Known Vulnerabilities](https://snyk.io/test/github/hejny/pdfmk/badge.svg)](https://snyk.io/test/github/hejny/pdfmk)
  [![Issues](https://img.shields.io/github/issues/hejny/pdfmk.svg?style=flat)](https://github.com/hejny/pdfmk/issues)
 
