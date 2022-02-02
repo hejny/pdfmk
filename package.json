@@ -33,12 +33,12 @@
   "dependencies": {
     "@types/puppeteer": "^3.0.2",
     "@types/sjcl": "^1.0.29",
-    "cross-fetch": "^3.0.6",
+    "cross-fetch": "^3.1.5",
     "sjcl": "^1.0.8"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
-    "codecov": "^3.5.0",
+    "codecov": "^3.8.2",
     "jest": "^26.4.2",
     "onchange": "^3.3.0",
     "prettier": "github:prettier/prettier",
@@ -46,7 +46,7 @@
     "ts-node": "^9.0.0",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.19.2",
+    "typedoc": "^0.22.11",
     "typescript": "^4.0.3"
   }
 }
