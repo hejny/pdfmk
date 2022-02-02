@@ -12,7 +12,7 @@
     "url": "https://github.com/hejny/pdfmk"
   },
   "author": "Pavol Hejný <me@pavolhejny.com> (https://www.pavolhejny.com/)",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "start": "npm run build-watch",
     "build": "tsc",
