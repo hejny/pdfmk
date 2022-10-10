@@ -41,7 +41,7 @@
         "codecov": "3.8.2",
         "jest": "26.4.2",
         "onchange": "3.3.0",
-        "prettier": "github:prettier/prettier",
+        "prettier": "2.7.1",
         "ts-jest": "26.4.1",
         "ts-node": "9.0.0",
         "tslint": "5.17.0",
