@@ -6,9 +6,9 @@
 
 [![License of 🖨️ PDF Maker client](https://img.shields.io/github/license/hejny/pdfmk.svg?style=flat)](https://github.com/hejny/pdfmk/blob/master/LICENSE)
 [![NPM Version of 🖨️ PDF Maker client](https://badge.fury.io/js/pdfmk.svg)](https://www.npmjs.com/package/pdfmk)
+[![Quality of package 🖨️ PDF Maker client](https://packagequality.com/shield/pdfmk.svg)](https://packagequality.com/#?package=pdfmk)
 [![Known Vulnerabilities](https://snyk.io/test/github/hejny/pdfmk/badge.svg)](https://snyk.io/test/github/hejny/pdfmk)
 [![Issues](https://img.shields.io/github/issues/hejny/pdfmk.svg?style=flat)](https://github.com/hejny/pdfmk/issues)
-<!--[![Quality of package 🖨️ PDF Maker client](https://packagequality.com/shield/pdfmk.svg)](https://packagequality.com/#?package=pdfmk)-->
 
 <!--/Badges-->
 
