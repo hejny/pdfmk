@@ -14,6 +14,11 @@
 
 A very simple tool library for the waiting using Promises.
 
+## 🔗 Links
+
+- [Client](https://github.com/hejny/pdfmk/)
+- [Server](https://github.com/hejny/pdfmk-server/)
+
 # Install
 
 Install from [NPM](https://www.npmjs.com/package/pdfmk)
