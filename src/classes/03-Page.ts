@@ -2,12 +2,12 @@ import { LoadEvent } from 'puppeteer';
 import { IOptions, Node } from './00-Node';
 import { Maker } from './01-Maker';
 import {
-    IJpegFileOptions,
-    IPdfFileOptions,
-    IPngFileOptions,
-    JpegFile,
-    PdfFile,
-    PngFile,
+  IJpegFileOptions,
+  IPdfFileOptions,
+  IPngFileOptions,
+  JpegFile,
+  PdfFile,
+  PngFile
 } from './04-File';
 
 export abstract class Page<
