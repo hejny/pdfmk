@@ -49,5 +49,15 @@
         "typedoc": "0.22.11",
         "typescript": "4.0.3"
     },
-    "description": "A very simple tool library for the waiting using Promises."
+    "description": "A very simple tool library for the waiting using Promises.",
+    "funding": [
+        {
+            "type": "individual",
+            "url": "https://buymeacoffee.com/hejny"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/hejny/pdfmk/blob/main/README.md#%EF%B8%8F-contributing"
+        }
+    ]
 }
